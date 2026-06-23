@@ -108,6 +108,13 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.piece-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
 .white {
     color: #ffffff;
     text-shadow: 1.5px 1.5px 0 #000000, -1.5px -1.5px 0 #000000, 

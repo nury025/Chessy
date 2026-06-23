@@ -2,6 +2,10 @@
 const PIECES = { K: 'K', Q: 'Q', R: 'R', B: 'B', N: 'N', P: 'P' };
 const WHITE = 'white';
 const BLACK = 'black';
+const PIECE_IMAGES = {
+    white: { K: 'wk.png', Q: 'wq.png', R: 'wr.png', B: 'wb.png', N: 'wn.png', P: 'wp.png' },
+    black: { K: 'bk.png', Q: 'bq.png', R: 'br.png', B: 'bb.png', N: 'bn.png', P: 'bp.png' }
+};
 
 // Game State Variables
 let board = [];
@@ -495,7 +499,11 @@ function updateBoard() {
             // Add piece
             const piece = board[row][col];
             if (piece.p) {
-                square.innerHTML = `<span class="piece ${piece.c}">${piece.p}</span>`;
+                const img = document.createElement('img');
+                img.className = 'piece-img';
+                img.src = `assets/${PIECE_IMAGES[piece.c][piece.p]}`;
+                img.alt = `${piece.c} ${piece.p}`;
+                square.appendChild(img);
             }
 
             square.onclick = () => onSquareClick(row, col);

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Chess Game with Statistics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chess Game</h1>
+        <div class="info" id="info">White to move</div>
+        <div class="status" id="status"></div>
+        
+        <div class="stats-panel" id="statsPanel" style="display: none;">
+            <div class="stats-title">Move History for Selected Piece:</div>
+            <div id="statsContent"></div>
+        </div>
+        
+        <div class="board" id="board"></div>
+        
+        <div id="gameOverMessage"></div>
+        
+        <div class="controls">
+            <button onclick="resetGame()">New Game</button>
+            <button onclick="clearStats()">Clear Statistics</button>
+        </div>
+    </div>
+
+    <div class="modal" id="promotionModal">
+        <div class="modal-content">
+            <div>Promote pawn to:</div>
+            <div class="promotion-options">
+                <button class="promo-btn" onclick="promoteToQueen()">Q</button>
+                <button class="promo-btn" onclick="promoteToRook()">R</button>
+                <button class="promo-btn" onclick="promoteToBishop()">B</button>
+                <button class="promo-btn" onclick="promoteToKnight()">N</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
